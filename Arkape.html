@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arkape Coffee House Payroll</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+
+<h1>ARKAPE COFFEE HOUSE</h1>
+
+<!-- BRANCH AND NO -->
+<div class="card">
+    <div class="form-group double">
+        <div class="left">
+            <label>The Arkape Branch:</label>
+            <input type="text" placeholder="Enter Branch">
+        </div>
+        <div class="right">
+            <label>No:</label>
+            <input type="text" placeholder="0001">
+        </div>
+    </div>
+</div>
+
+<!-- PAY PERIOD -->
+<div class="card">
+    <div class="form-group">
+        <label>Pay Period From:</label>
+        <input type="date">
+    </div>
+    <div class="form-group">
+        <label>To:</label>
+        <input type="date">
+    </div>
+</div>
+
+<!-- PAYSLIP MONTH -->
+<div class="card">
+    <div class="form-group centered">
+        <label>Payslip for the Month of:</label>
+        <input type="date" id="PayDate1">
+    </div>
+</div>
+
+<!-- EMPLOYEE + ATTENDANCE CARD -->
+<div class="card employee-section">
+    <!-- EMPLOYEE INFO -->
+    <div class="employee-info">
+        <h3>Employee Information</h3>
+        <div class="form-group">
+            <label>Employee Name:</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Designation:</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Date of Joining:</label>
+            <input type="date">
+        </div>
+        <div class="form-group">
+            <label>Pay Period:</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Pay Date:</label>
+            <input type="date">
+        </div>
+        <div class="form-group">
+            <label>PAGIBIG #:</label>
+            <input type="text">
+        </div>
+    </div>
+
+    <!-- ATTENDANCE INFO -->
+    <div class="attendance">
+        <h3>Attendance Summary</h3>
+        <div class="form-group">
+            <label>Cut-Off Attendance:</label>
+            <input type="number">
+        </div>
+        <div class="form-group">
+            <label>Vacation Leave:</label>
+            <input type="number">
+        </div>
+        <div class="form-group">
+            <label>Sick Leave:</label>
+            <input type="number">
+        </div>
+        <div class="form-group">
+            <label>Emergency Leave:</label>
+            <input type="number">
+        </div>
+        <div class="form-group">
+            <label>Regular Holiday:</label>
+            <input type="number">
+        </div>
+    </div>
+</div>
+
+<!-- PAYROLL TABLE -->
+<div class="card">
+    <table>
+        <tr>
+            <th colspan="4">EARNINGS</th>
+            <th colspan="2">DEDUCTIONS</th>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>No. of Days</th>
+            <th>Gross</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+
+        <tr>
+            <td>Daily Rate</td>
+            <td><input type="number" id="dailyRate"></td>
+            <td><input type="number" id="daysWorked"></td>
+            <td><input type="text" id="grossDaily" readonly></td>
+            <td>Cut Off Panks</td>
+            <td><input type="number" class="deduction"></td>
+        </tr>
+        <tr>
+            <td>Transpo Allowance</td>
+            <td><input type="number" id="transpo"></td>
+            <td><input type="number" id="transpoDays"></td>
+            <td><input type="text" id="grossTranspo" readonly></td>
+            <td>Short Sales</td>
+            <td><input type="number" class="deduction"></td>
+        </tr>
+        <tr>
+            <td>Rice Allowance</td>
+            <td><input type="number" id="rice"></td>
+            <td><input type="number" id="riceDays"></td>
+            <td><input type="text" id="grossRice" readonly></td>
+            <td>Missing Cups & Lids</td>
+            <td><input type="number" class="deduction"></td>
+        </tr>
+        <tr>
+            <td>OT</td>
+            <td><input type="number" id="ot"></td>
+            <td><input type="number" id="otDays"></td>
+            <td><input type="text" id="grossOT" readonly></td>
+            <td>Other Deductions</td>
+            <td><input type="number" class="deduction"></td>
+        </tr>
+
+        <tr class="summary">
+            <td colspan="3">GROSS PAY</td>
+            <td><input type="text" id="totalGross" readonly></td>
+            <td>OVERALL DEDUCTIONS</td>
+            <td><input type="text" id="totalDeduction" readonly></td>
+        </tr>
+
+        <tr class="net">
+            <td colspan="3">NET PAY</td>
+            <td colspan="3"><input type="text" id="netPay" readonly></td>
+        </tr>
+    </table>
+</div>
+
+<!-- REMARKS -->
+<div class="card">
+    <h4>Remarks:</h4>
+    <textarea rows="3" style="resize: none; width: 100%;"></textarea>
+</div>
+
+<br>
+<button onclick="computePayroll()">COMPUTE</button>
+<button onclick="window.print()">PRINT PAYSLIP</button>
+
+<script src="script.js"></script>
+</body>
+</html>

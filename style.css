@@ -1,0 +1,221 @@
+/* ============================= */
+/* 1. GENERAL PAGE */
+/* ============================= */
+body{
+    font-family: Arial;
+    margin: 20px;
+
+}
+
+.card{
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* ============================= */
+/* 2. CARD STYLE SECTIONS */
+/* ============================= */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+/* ============================= */
+/* 3. FLEX SECTIONS */
+/* ============================= */
+.header,
+.employee-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.employee-info,
+.attendance{
+    flex: 1;
+    min-width: 250px;
+}
+
+/* ============================= */
+/* 4. FORM ALIGNMENT */
+/* ============================= */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    width: 160px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #8B5E3C;
+    outline: none;
+    box-shadow: 0 0 5px rgba(139, 94, 60, 0.3);
+}
+
+
+/* ============================= */
+/* 6. TABLE DESIGN */
+/* ============================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+th {
+    background-color: #8B5E3C;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.summary {
+    background-color: #e6f4ea;
+    font-weight: bold;
+}
+
+.net {
+    background-color: #ffe066;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* ============================= */
+/* 7. BUTTON */
+/* ============================= */
+button {
+    background-color: #8B5E3C;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #6f472c;
+}
+
+/* ============================= */
+/* 8. PRINT FRIENDLY */
+/* ============================= */
+@media print{
+
+    body{
+        margin: 0;
+    }
+
+    button{
+        display: none;
+    }
+
+    .card{
+        border: none;
+        max-width: 100%;
+    }
+
+    table{
+        width: 100%;
+        font-size: 12px;
+    }
+
+    input{
+        border: none;
+    }
+
+    textarea{
+        border: none;
+    }
+
+}
+
+table {
+    table-layout: fixed;   /* Prevents column stretching */
+    word-wrap: break-word;
+}
+
+th, td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* If you have inputs inside table */
+td input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Clean spacing */
+table {
+    margin-top: 20px;
+}
+
+/* Optional: improve row spacing */
+tr {
+    height: 45px;
+}
+
+/*    New */
+/* Double input row (branch and no) */
+.form-group.double{
+    grid-area: auto;
+    display: flex;
+    align-items: center;
+    width: 10p;
+}
+
+
+/* Payslip Month Row - Centered like other inputs */
+.form-group.centered {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;
+    gap: 10px; /* spacing between label and input */
+}
+
+.form-group.centered label {
+    width: 180px; /* match label size of other inputs */
+}
+
+.form-group.centered input {
+    width: 200px; /* fixed width for neat alignment */
+}
+
+/* Branch & No row already 
